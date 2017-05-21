@@ -6,7 +6,9 @@ The point of this dumb code is to create a Twitter Bot that auto responds to peo
 
 Pre-reqs
 Install PTT - http://mike.verdone.ca/twitter/ 
+
 Get a twitter app (api enabled) account
+
 Go nuts
 
 
