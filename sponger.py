@@ -9,14 +9,6 @@ consumer_key = "Z"
 consumer_secret = "J"
 
 
-#with open("that-us.jpg", "rb") as imagefile:
-#       imagedata = imagefile.read()
-#t_upload = Twitter(domain='upload.twitter.com',auth=OAuth(token, token_secret, consumer_key, consumer_secret))
-#id_img1 = t_upload.media.upload(media=imagedata)["media_id_string"]
-
-#print(id_img1)
-
-
 t = Twitter(
     auth=OAuth(token, token_secret, consumer_key, consumer_secret))
 
