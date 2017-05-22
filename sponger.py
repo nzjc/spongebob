@@ -8,7 +8,6 @@ token_secret = "Y"
 consumer_key = "Z"
 consumer_secret = "J"
 
-
 t = Twitter(
     auth=OAuth(token, token_secret, consumer_key, consumer_secret))
 
@@ -23,6 +22,7 @@ def sponge(stringo):
 
         return dringo
 
+#Don't tweet yourself
 def removeName(stringo):
         stringo = stringo.replace("@spongebob_it","")
         return stringo
@@ -39,7 +39,7 @@ def tweetIt(id, text):
 
 
 ## First run of script, set the since_id
-startUp = t.statuses.mentions_timeline(count=5)
+startUp = t.statuses.mentions_timeline(count=1)
 for tweet in startUp:
         text = removeName(tweet['text'])
         id = tweet['user']['screen_name']
@@ -47,7 +47,6 @@ for tweet in startUp:
         if tweet['id'] > highest_id:
                 highest_id = tweet['id']
 while True:
-#       newTweets = []
         newTweets = t.statuses.mentions_timeline(count=5,since_id=highest_id)
         for tweets in newTweets:
                 text = removeName(tweets['text'])
